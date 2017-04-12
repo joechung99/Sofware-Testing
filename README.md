@@ -2,4 +2,4 @@
 Sofware Testing
 
 
-g++ testtrangle.cpp -lpthread -lgtest
+g++ testtrangle.cpp -lgtest -lpthread
