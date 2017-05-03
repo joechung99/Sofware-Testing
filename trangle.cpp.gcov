@@ -1,0 +1,72 @@
+        -:    0:Source:trangle.cpp
+        -:    0:Graph:tranglepath.gcno
+        -:    0:Data:tranglepath.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include<iostream>
+        -:    2:using namespace std;
+        -:    3:class judgTrangle{
+        -:    4:	public:
+        -:    5:		int a1;
+        -:    6:		int a2;
+        -:    7:		int a3;
+        -:    8:		static int trangletype(int,int,int);	
+        -:    9:		static int isboundary(int,int,int);
+        -:   10:		static int test(int a,int b);
+        -:   11:};
+    #####:   12:int judgTrangle::test(int a,int b){
+    #####:   13:	return a+b;
+        -:   14:}
+       13:   15:int judgTrangle::isboundary(int a1,int a2,int a3){
+       13:   16:	if (a1<1||a1>200){
+        -:   17:		//cout << "a invalid"<<endl;
+        1:   18:		return 0;
+        -:   19:	}
+       12:   20:        else if (a2<1||a2>200){
+        -:   21:                //cout << "b invalid"<<endl;
+        1:   22:                return 0;
+        -:   23:        }
+       11:   24:        else if (a3<1||a3>200){
+        -:   25:                //cout << "c invalid"<<endl;
+        1:   26:                return 0;
+        -:   27:        }
+       10:   28:}
+       13:   29:int judgTrangle::trangletype(int a1,int a2,int a3){
+       13:   30:	if (isboundary(a1,a2,a3)==0){
+        -:   31:		//cout << "not trangle"<<endl;
+        3:   32:		return 0;
+        -:   33:	}
+       10:   34:	if (a1>=a2+a3){
+        -:   35:		//cout <<"not trangle"<<endl;
+        1:   36:		return 0;
+        -:   37:	}
+        9:   38:        else if (a2>=a1+a3){
+        -:   39:                //cout <<"not trangle"<<endl;
+        1:   40:                return 0;
+        -:   41:        }
+        8:   42:        else if (a3>=a2+a1){
+        -:   43:                //cout <<"not trangle"<<endl;
+        2:   44:                return 0;
+        -:   45:        }
+        6:   46:	if (a1==a2&&a2==a3){
+        -:   47:		//cout <<"Equilateral"<<endl;
+        2:   48:		return 1;
+        -:   49:	}
+        4:   50:	else if(a1!=a2 && a1!=a3 && a2!=a3){
+        -:   51:		//cout <<"Scalene"<<endl;
+        2:   52:		return 2;
+        -:   53:	}
+        -:   54:	else{
+        -:   55:		//cout<<"Isosceles"<<endl;
+        2:   56:		return 3;
+        -:   57:	}
+        -:   58:}
+        -:   59:/*int main(){
+        -:   60:	int a1,a2,a3;
+        -:   61:	cout<<"input a,b,c for trangle"<<endl;
+        -:   62:	cin >> a1;
+        -:   63:	cin >> a2;
+        -:   64:	cin >> a3;
+        -:   65:	judgTrangle test;
+        -:   66:	test.trangletype(a1,a2,a3);
+        -:   67:}*/
