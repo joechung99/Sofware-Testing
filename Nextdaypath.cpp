@@ -1,23 +1,22 @@
 #include "Nextday.cpp"
 #include <gtest/gtest.h>
 TEST(Nextdaytest,c0){
-        EXPECT_EQ(0,judgTrangle::trangletype(1,100,200));
-        EXPECT_EQ(1,judgTrangle::trangletype(200,200,200));
-        EXPECT_EQ(2,judgTrangle::trangletype(100,150,199));
-        EXPECT_EQ(3,judgTrangle::trangletype(1,200,200));
+        EXPECT_EQ(-1,Nextday(1811,1,1));
+        EXPECT_EQ(20000102,Nextday(2000,1,1));
+        EXPECT_EQ(19990301,Nextday(1999,2,28));
+        EXPECT_EQ(20000301,Nextday(2000,2,29));
+	EXPECT_EQ(20000401,Nextday(2000,3,31));
 }
 TEST(Nextdaytest,c1andMCDC){
-        EXPECT_EQ(0,judgTrangle::trangletype(201,100,100));
-        EXPECT_EQ(0,judgTrangle::trangletype(100,201,100));
-        EXPECT_EQ(0,judgTrangle::trangletype(100,100,201));
-        EXPECT_EQ(0,judgTrangle::trangletype(150,100,10));
-        EXPECT_EQ(0,judgTrangle::trangletype(100,150,10));
-        EXPECT_EQ(0,judgTrangle::trangletype(100,10,150));
-        EXPECT_EQ(1,judgTrangle::trangletype(150,150,150));
-        EXPECT_EQ(2,judgTrangle::trangletype(100,150,200));
-        EXPECT_EQ(3,judgTrangle::trangletype(150,150,200));
+        EXPECT_EQ(-1,Nextday(1811,1,1));
+	EXPECT_EQ(-1,Nextday(1991,2,29));
+        EXPECT_EQ(20000102,Nextday(2000,1,1));
+        EXPECT_EQ(19990301,Nextday(1999,2,28));
+        EXPECT_EQ(20000301,Nextday(2000,2,29));
+        EXPECT_EQ(20000401,Nextday(2000,3,31));
+        EXPECT_EQ(20000501,Nextday(2000,4,30));
+	EXPECT_EQ(20010101,Nextday(2000,12,31));
 }
-
 
 int main(int argc, char** argv) {
         testing::InitGoogleTest(&argc, argv);

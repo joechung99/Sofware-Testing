@@ -1,6 +1,6 @@
         -:    0:Source:/usr/include/gtest/gtest.h
-        -:    0:Graph:tranglepath.gcno
-        -:    0:Data:tranglepath.gcda
+        -:    0:Graph:Nextdaypath.gcno
+        -:    0:Data:Nextdaypath.gcda
         -:    0:Runs:1
         -:    0:Programs:1
         -:    1:// Copyright 2005, Google Inc.
@@ -1482,12 +1482,12 @@
         -: 1477: public:
         -: 1478:  // This templatized version is for the general case.
         -: 1479:  template <typename T1, typename T2>
-        6: 1480:  static AssertionResult Compare(const char* expected_expression,
+       13: 1480:  static AssertionResult Compare(const char* expected_expression,
         -: 1481:                                 const char* actual_expression,
         -: 1482:                                 const T1& expected,
         -: 1483:                                 const T2& actual) {
         -: 1484:    return CmpHelperEQ(expected_expression, actual_expression, expected,
-        6: 1485:                       actual);
+       13: 1485:                       actual);
         -: 1486:  }
         -: 1487:
         -: 1488:  // With this overloaded version, we allow anonymous enums to be used
@@ -1515,7 +1515,7 @@
         -: 1510:  // NOT a pointer, e.g. ASSERT_EQ(0, AnIntFunction()) or
         -: 1511:  // EXPECT_EQ(false, a_bool).
         -: 1512:  template <typename T1, typename T2>
-        7: 1513:  static AssertionResult Compare(
+        -: 1513:  static AssertionResult Compare(
         -: 1514:      const char* expected_expression,
         -: 1515:      const char* actual_expression,
         -: 1516:      const T1& expected,
@@ -1527,7 +1527,7 @@
         -: 1522:      // this template match better.
         -: 1523:      typename EnableIf<!is_pointer<T2>::value>::type* = 0) {
         -: 1524:    return CmpHelperEQ(expected_expression, actual_expression, expected,
-        7: 1525:                       actual);
+        -: 1525:                       actual);
         -: 1526:  }
         -: 1527:
         -: 1528:  // This version will be picked when the second argument to ASSERT_EQ() is a
