@@ -1,0 +1,19 @@
+        -:    0:Source:commissionpath.cpp
+        -:    0:Graph:commissionpath.gcno
+        -:    0:Data:commissionpath.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "commission.cpp"
+        -:    2:#include <gtest/gtest.h>
+        5:    3:TEST(Nextdaytest,c0){
+        1:    4:        EXPECT_EQ(-1,commission(-1,10,10));
+        1:    5:	EXPECT_EQ(100,commission(10,10,10));
+        1:    6:	EXPECT_EQ(167.5,commission(20,10,10));
+        1:    7:	EXPECT_EQ(260,commission(20,20,20));
+        -:    8:
+        1:    9:}
+        -:   10:
+        1:   11:int main(int argc, char** argv) {
+        1:   12:        testing::InitGoogleTest(&argc, argv);
+        1:   13:        return RUN_ALL_TESTS();
+        3:   14:}
